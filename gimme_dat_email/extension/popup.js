@@ -91,7 +91,7 @@ async function searchCompanies(company) {
 function showCompanyOptions(companies, fullName) {
   const container = document.getElementById('companyOptions');
   container.innerHTML = '';
-  
+
   companies.forEach((company, index) => {
     const option = document.createElement('div');
     option.className = 'company-option';
@@ -103,14 +103,14 @@ function showCompanyOptions(companies, fullName) {
         <span class="company-domain">${company.domain}</span>
       </label>
     `;
-    
+
     option.querySelector('input').addEventListener('change', () => {
       generateEmail(company, fullName);
     });
-    
+
     container.appendChild(option);
   });
-  
+
   document.getElementById('companySelection').style.display = 'block';
   document.getElementById('result').style.display = 'none';
   document.getElementById('error').style.display = 'none';
@@ -169,7 +169,7 @@ document.getElementById('backButton').addEventListener('click', () => {
   // Hide result and show company selection
   document.getElementById('result').style.display = 'none';
   document.getElementById('companySelection').style.display = 'block';
-  
+
   // Uncheck the selected radio button
   const selectedRadio = document.querySelector('input[name="selected_company"]:checked');
   if (selectedRadio) {
