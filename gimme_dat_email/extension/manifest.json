@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "WTF is that dude's (or woman's) email?",
+  "version": "1.0",
+  "description": "Find professional email addresses quickly",
+  "permissions": [
+    "clipboardWrite",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "theme_color": "#3b82f6",
+  "background_color": "#f8fafc"
+}

@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+body {
+  width: 400px;
+  padding: 15px;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #1e293b;
+  /* Dark blue background */
+  color: #e2e8f0;
+  /* Light text */
+  scroll-behavior: smooth;
+  max-height: 600px;
+  /* Limit max height of popup */
+  overflow-y: auto;
+  /* Enable scrolling if needed */
+}
+
+/* Rest of your existing CSS... */
+/* Add min-width and max-width to the container */
+.container {
+  min-width: 350px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 20px;
+  /* Reduced from 24px */
+  font-weight: 400;
+  /* Lighter weight */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+  /* Tighter letter spacing */
+}
+
+.form-group {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #cbd5e1;
+  /* Lighter gray for labels */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #475569;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  background-color: #334155;
+  /* Darker input background */
+  color: #f8fafc;
+  /* Light text */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #1e293b;
+  /* Darker when focused */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.company-selection {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #334155;
+  /* Darker card background */
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.company-selection h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #f8fafc;
+  /* Changed from #0f172a to white */
+}
+
+.company-option {
+  margin: 4px 0;
+  /* Reduced from 8px */
+  padding: 8px;
+  /* Reduced from 10px */
+  border: 2px solid #475569;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: #1e293b;
+}
+
+.company-option:hover {
+  border-color: #3b82f6;
+  background-color: #1e293b;
+}
+
+.company-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+}
+
+.company-name {
+  font-weight: 500;
+  color: #f8fafc;
+}
+
+.company-domain {
+  color: #94a3b8;
+  /* Lighter gray for domain */
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 13px;
+}
+
+.result-box {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #334155;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.result-box h2 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #f8fafc;
+  /* Changed from #0f172a to white */
+}
+
+.email-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  border: 2px solid #475569;
+}
+
+.email {
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #f8fafc;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #2563eb;
+}
+
+.info-box {
+  margin: 16px 0;
+  padding: 12px 16px;
+  background-color: #1e40af;
+  /* Darker blue for info */
+  border-radius: 8px;
+  color: #bfdbfe;
+  font-size: 14px;
+}
+
+.info-box.warning {
+  background-color: #991b1b;
+  /* Darker red for warning */
+  color: #fecaca;
+}
+
+/* Add smooth transitions for all state changes */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Style the radio buttons */
+input[type="radio"] {
+  accent-color: #3b82f6;
+  margin-right: 8px;
+}
+
+/* Add highlight animation */
+@keyframes highlightFade {
+  0% {
+    background-color: #dbeafe;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+.result-box.highlight {
+  animation: highlightFade 1s ease;
+}
+
+/* Add visual feedback for selected company */
+.company-option input[type="radio"]:checked+.company-label {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.company-option input[type="radio"]:checked+.company-label .company-domain {
+  color: #3b82f6;
+}
+
+.back-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 12px;
+  background-color: transparent;
+  color: #60a5fa;
+  /* Brighter blue for visibility */
+  border: 1px solid #60a5fa;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #1e293b;
+  transform: translateY(-1px);
+}
+
+.back-btn:active {
+  transform: translateY(0);
+}

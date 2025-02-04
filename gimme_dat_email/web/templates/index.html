@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WTF is that dude's (or woman's) email?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <h1>WTF is that dude's (or woman's) email?</h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" id="name" required placeholder="e.g., Aye Sterny"
+          value="{{ request.form['name'] }}">
+      </div>
+      <div class="form-group">
+        <label for="company">Company Name:</label>
+        <input type="text" name="company" id="company" required placeholder="e.g., LeftLane"
+          value="{{ request.form['company'] }}">
+      </div>
+      {% if companies %}
+      <div class="company-selection">
+        <h3>Select the correct company domain:</h3>
+        {% for company, domain, pattern in companies %}
+        <div class="company-option">
+          <input type="radio" name="selected_domain" id="domain_{{ loop.index }}" value="{{ domain }}" required>
+          <input type="hidden" name="selected_pattern" value="{{ pattern }}">
+          <label for="domain_{{ loop.index }}" class="company-label">
+            <span class="company-name">{{ company }}</span>
+            <span class="company-domain">{{ domain }}</span>
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <button type="submit" class="submit-btn">
+        {% if companies %}Generate Email{% else %}Search{% endif %}
+      </button>
+    </form>
+
+    {% if domain_info %}
+    <div class="info-box">
+      <p>{{ domain_info }}</p>
+    </div>
+    {% endif %}
+
+    {% if result is not none %}
+    {% if result|length > 0 %}
+    <div class="result-box">
+      <h2>Generated Email:</h2>
+      {% for email in result %}
+      <div class="email-result">
+        <span class="email">{{ email }}</span>
+        <button class="copy-btn" onclick="copyToClipboard('{{ email }}')">Copy</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="info-box warning">
+      <p>Could not find company email pattern. Please verify the company name.</p>
+    </div>
+    {% endif %}
+    {% endif %}
+  </div>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function () {
+        const btn = event.target;
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+
+</html>

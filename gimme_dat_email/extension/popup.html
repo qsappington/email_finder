@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WTF is that dude's (or woman's) email?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>WTF is that dude's (or woman's) email?</h1>
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required placeholder="e.g., Aye Sterny">
+    </div>
+    <div class="form-group">
+      <label for="company">Company Name:</label>
+      <input type="text" id="company" required placeholder="e.g., LeftLane">
+    </div>
+    <button id="findEmail" class="submit-btn">Search</button>
+
+    <div id="companySelection" class="company-selection" style="display: none;">
+      <h3>Select the correct company domain:</h3>
+      <div id="companyOptions"></div>
+    </div>
+
+    <div id="result" class="result-box" style="display: none;">
+      <h2>Generated Email:</h2>
+      <div id="emailResult" class="email-result">
+        <span id="emailText" class="email"></span>
+        <button class="copy-btn" id="copyButton">Copy</button>
+      </div>
+      <button class="back-btn" id="backButton">← Back to companies</button>
+    </div>
+
+    <div id="error" class="info-box warning" style="display: none;">
+      <p id="errorText"></p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
